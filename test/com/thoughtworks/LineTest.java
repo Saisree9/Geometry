@@ -96,6 +96,4 @@ public class LineTest {
         Line line2 = new Line(1, 4, 3, 5);
         assertNotEquals(line1, line2);
     }
-
-
 }

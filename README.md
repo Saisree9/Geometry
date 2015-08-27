@@ -4,7 +4,7 @@
 #Dependencies
     *Any OS
     *JDK 1.8
-#Deploy
-    *ant
+#Bulding
+    *ant build
 #Testing
     *ant runjUnit

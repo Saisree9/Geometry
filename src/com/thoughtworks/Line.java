@@ -20,13 +20,17 @@ public class Line {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        Line line = (Line) obj;
-        if(obj == null)   return false;
-        if (this.x1 == line.x1 && this.y1 == line.y1 && this.x2 == line.x2 && this.y2 == line.y2)
-            return true;
-        else if(this.x1 == line.x2 && this.y1 == line.y2 && this.x2 == line.x1 && this.y2 == line.y1)
-            return true;
-        return false;
+    public boolean equals(Object that) {
+        if (that == null || !(that instanceof Line)) return false;
+        Line thatLine = (Line) that;
+        return compareTwoCoordinatesInterchangibly(thatLine.x1, thatLine.y1, thatLine.x2, thatLine.y2);
+    }
+
+    private boolean compareTwoCoordinatesInterchangibly(double x11, double y11, double x21, double y21) {
+        return compareTwoCoordinatePairs(x11, y11, x21, y21) || compareTwoCoordinatePairs(x21, y21, x11, y11);
+    }
+
+    private boolean compareTwoCoordinatePairs(double x11, double y11, double x21, double y21) {
+        return this.x1 == x11 && this.y1 == y11 && this.x2 == x21 && this.y2 == y21;
     }
 }
