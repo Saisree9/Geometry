@@ -63,5 +63,11 @@ public class LineTest {
         assertEquals(line1, line2);
     }
 
+    @Test
+    public void shouldNotEqualsToNull() {
+        Line line1 = new Line(1, 0, 2, 0);
+        assertNotEquals(line1, null);
+    }
+
 
 }
