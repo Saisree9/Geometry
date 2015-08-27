@@ -16,4 +16,6 @@ public class LineTest {
         Assert.assertEquals(4.0, line.calculateLength(), 0.001);
     }
 
+
+
 }

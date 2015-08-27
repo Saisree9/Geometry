@@ -1,5 +1,5 @@
 <?xml version = "1.0"?>
-<project name="Geometry">
+<project name="Geometry" >
     <target name="build" depends="clean">
         <mkdir dir="out"/>
         <javac destdir="out">
@@ -13,15 +13,24 @@
     </target>
     <target name="runjUnit" depends="build">
 
-        <junit printsummary="yes" fork="yes" haltonfailure="yes">
+        <junit printsummary="yes"
+               fork="yes"
+               haltonfailure="yes"
+               showoutput="true"
+               outputtoformatters="true">
             <classpath>
                 <pathelement location="lib/junit-4.11.jar"/>
                 <pathelement location="lib/hamcrest-library-1.3.jar"/>
                 <pathelement location="lib/hamcrest-core-1.3.jar"/>
                 <pathelement location="out"/>
             </classpath>
+            <formatter type="xml"/>
+            <batchtest fork="yes" todir="${junit.out.dir.xml}">
+                <!--<fileset dir="${src.dir}" includes="**/*Test.java"/>-->
+            </batchtest>
             <formatter type="plain"/>
-            <test name="com.thoughtworks.LineTest"/>
+            <test name="com.thoughtWorks.LineTest"/>
+            <test name="com.thoughtWorks.LineComparatorTest"/>
         </junit>
     </target>
 
