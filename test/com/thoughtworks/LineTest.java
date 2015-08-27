@@ -90,5 +90,12 @@ public class LineTest {
         assertNotEquals(line1, line2);
     }
 
+    @Test
+    public void shouldNotEqualsToAnotherLineWhichHasDifferentY2Points() {
+        Line line1 = new Line(1, 2, 3, 4);
+        Line line2 = new Line(1, 4, 3, 4);
+        assertNotEquals(line1, line2);
+    }
+
 
 }
