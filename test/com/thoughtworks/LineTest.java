@@ -69,5 +69,12 @@ public class LineTest {
         assertNotEquals(line1, null);
     }
 
+    @Test
+    public void shouldNotEqualsToAnotherLineWhichHasDifferentX1Points() {
+        Line line1 = new Line(1, 2, 3, 4);
+        Line line2 = new Line(4, 2, 3, 4);
+        assertNotEquals(line1, line2);
+    }
+
 
 }
