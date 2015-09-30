@@ -1,5 +1,8 @@
 package com.thoughtworks;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Line {
     private Point startingPoint;
     private Point endingPoint;
@@ -13,6 +16,11 @@ public class Line {
         return startingPoint.distanceFrom(endingPoint);
     }
 
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("setup.xml");
+        Line line = (Line)context.getBean("line");
+        System.out.println(line.length());
+    }
 
     @Override
     public boolean equals(Object that) {
