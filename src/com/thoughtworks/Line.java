@@ -19,7 +19,6 @@ public class Line {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("setup.xml");
         Line line = (Line)context.getBean("line");
-        System.out.println(line.length());
     }
 
     @Override
